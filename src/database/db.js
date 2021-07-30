@@ -1,7 +1,14 @@
 const mongoose = require('mongoose')
 
 function connect() {
-    mongoose.connect('mongodb:http://localhost:5000/api')
+ 
+    mongoose.set('useNewUrlParser', true)
+    mongoose.set('useUnifiedTopology', true)
+
+    mongoose.connect("mongodb://localhost:27017/api", {
+        useUnifiedTopology: true,
+        useNewUrlParser: true
+    });
 
     const db = mongoose.connection
 

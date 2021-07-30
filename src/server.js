@@ -4,7 +4,7 @@ const db = require('./database/db')
 const routes = require('./routes/routes')
 const app = express()
 
-db.connect
+db.connect()
 app.use('/api/', routes)
 
 const port = process.env.PORT || 5000
